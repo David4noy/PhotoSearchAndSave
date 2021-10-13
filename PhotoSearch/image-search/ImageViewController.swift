@@ -25,11 +25,11 @@ class ImageViewController: UIViewController {
         } catch  {
             print(error)
         }
+        
         photosFolderUrl = photosUrl
         
         configure(urlString: urlString)
         
-        getAllPhotos()
     }
     
     @IBAction func saveImage(_ sender: UIBarButtonItem) {
@@ -50,11 +50,9 @@ class ImageViewController: UIViewController {
             } catch {
                 didSaveAlert(didManageToSave: false)
             }
-        } else {
-            print("here")
         }
-        
     }
+    
     func configure(urlString: String?) {
         
         guard let str = urlString,
@@ -94,7 +92,7 @@ class ImageViewController: UIViewController {
             if let name = alert.textFields?.first?.text {
                 let check = name.filter { !$0.isWhitespace }
                 if name.isEmpty || check.isEmpty || check == "" {
-                    print("not empty")
+                    print("Empty")
                 } else {
                     fileName = name
                   //  fileName = fileName.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
@@ -129,27 +127,7 @@ class ImageViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func getAllPhotos() {
-        
-        guard let folderUrl = photosFolderUrl else {
-            return
-        }
-        
-        do {
-            // Get the directory contents urls (including subfolders urls)
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: folderUrl, includingPropertiesForKeys: nil)
-        //    print(directoryContents)
-            
-//            // if you want to filter the directory contents you can do like this:
-            let photosFiles = directoryContents.filter{ $0.pathExtension == "png" }
 
-            let photosFilesNames = photosFiles.map{ $0.deletingPathExtension().lastPathComponent }
-            print("mp3 list:", photosFilesNames)
-            
-        } catch {
-            print(error)
-        }
-    }
     
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BOe-Wu-m9n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -9,68 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GN8-Yu-7zk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="771"/>
-                                <connections>
-                                    <segue destination="PVt-GO-bNZ" kind="embed" id="rvT-Xv-iye"/>
-                                </connections>
-                            </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e2D-IG-eck">
-                                <rect key="frame" x="8" y="815" width="398" height="32"/>
-                                <segments>
-                                    <segment title="Search"/>
-                                    <segment title="Saved"/>
-                                </segments>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="af3-4s-HDb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="771"/>
-                                <connections>
-                                    <segue destination="t8b-3W-qgr" kind="embed" id="B0g-Ff-vGN"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="e2D-IG-eck" firstAttribute="top" secondItem="GN8-Yu-7zk" secondAttribute="bottom" id="2YN-jU-bbW"/>
-                            <constraint firstItem="e2D-IG-eck" firstAttribute="top" secondItem="af3-4s-HDb" secondAttribute="bottom" id="5GF-1L-yqs"/>
-                            <constraint firstItem="e2D-IG-eck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="9dc-x1-Wq9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e2D-IG-eck" secondAttribute="bottom" constant="16" id="ALW-Ci-ALu"/>
-                            <constraint firstItem="GN8-Yu-7zk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AvB-pQ-ih2"/>
-                            <constraint firstItem="af3-4s-HDb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hkr-Fe-S5k"/>
-                            <constraint firstItem="GN8-Yu-7zk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KD1-6w-GsS"/>
-                            <constraint firstItem="GN8-Yu-7zk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NHG-Ai-5ud"/>
-                            <constraint firstItem="af3-4s-HDb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hzN-yE-2vA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e2D-IG-eck" secondAttribute="trailing" constant="8" id="n0l-q3-DF9"/>
-                            <constraint firstItem="af3-4s-HDb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sI7-L3-lNA"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageResultsViewOutlet" destination="GN8-Yu-7zk" id="SzC-Jx-0GK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="111.59420289855073" y="79.6875"/>
-        </scene>
         <!--Image Collection View Controller-->
         <scene sceneID="jG2-fB-quJ">
             <objects>
                 <viewController id="zCX-3a-vF2" customClass="ImageCollectionViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmp-n8-5p4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="771"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EQE-nx-qrp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="771"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Aer-Kt-YMt">
                                     <size key="itemSize" width="128" height="128"/>
@@ -125,11 +73,11 @@
             <objects>
                 <viewController id="4wb-FS-7hD" customClass="ImageViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="30Y-PK-qGt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="771"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V8E-GK-EgI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="683"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kFk-Jx-wnb"/>
@@ -156,10 +104,29 @@
             </objects>
             <point key="canvasLocation" x="2572" y="529"/>
         </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="qZI-QP-Uvi">
+            <objects>
+                <tabBarController id="BOe-Wu-m9n" customClass="MainTabBarViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="38L-Wy-cuk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PVt-GO-bNZ" kind="relationship" relationship="viewControllers" id="zV0-hA-tFR"/>
+                        <segue destination="bh9-8T-lFN" kind="relationship" relationship="viewControllers" id="PLm-pu-iVy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFD-8M-OGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="165"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="PJR-3i-YLE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PVt-GO-bNZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="rVI-25-4zh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u1f-ml-N35">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -174,41 +141,128 @@
             </objects>
             <point key="canvasLocation" x="848" y="529"/>
         </scene>
-        <!--View Controller-->
+        <!--Image List View Controller-->
         <scene sceneID="oXb-qR-FzG">
             <objects>
-                <viewController id="Jsf-tY-63A" sceneMemberID="viewController">
+                <viewController id="Jsf-tY-63A" customClass="ImageListViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oxS-lX-r6O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="771"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-55-R1z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="113" id="Qbc-3R-P0a" customClass="ImageTableViewCell" customModule="PhotoSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="113"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qbc-3R-P0a" id="vDb-3E-x1b">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xc-PG-tdl">
+                                                    <rect key="frame" x="28" y="19" width="255" height="75"/>
+                                                    <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-fA-L0e">
+                                                    <rect key="frame" x="291" y="8" width="115" height="97"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aYI-fA-L0e" secondAttribute="height" multiplier="19:16" id="Wvd-Kw-7vT"/>
+                                                        <constraint firstAttribute="height" constant="60" id="ldj-4x-lqJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9xc-PG-tdl" firstAttribute="leading" secondItem="vDb-3E-x1b" secondAttribute="leadingMargin" constant="8" id="2og-hX-3t1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9xc-PG-tdl" secondAttribute="bottom" constant="8" id="9dk-2X-GNP"/>
+                                                <constraint firstItem="9xc-PG-tdl" firstAttribute="top" secondItem="vDb-3E-x1b" secondAttribute="topMargin" constant="8" id="RSw-85-uCL"/>
+                                                <constraint firstAttribute="trailing" secondItem="aYI-fA-L0e" secondAttribute="trailing" constant="8" id="VCX-0d-NBT"/>
+                                                <constraint firstItem="aYI-fA-L0e" firstAttribute="leading" secondItem="9xc-PG-tdl" secondAttribute="trailing" constant="8" id="knN-E7-WkR"/>
+                                                <constraint firstItem="aYI-fA-L0e" firstAttribute="top" secondItem="vDb-3E-x1b" secondAttribute="top" constant="8" id="mOm-yE-o3a"/>
+                                                <constraint firstAttribute="bottom" secondItem="aYI-fA-L0e" secondAttribute="bottom" constant="8" id="ojt-9S-G0w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageOutlet" destination="aYI-fA-L0e" id="9y1-fe-sx0"/>
+                                            <outlet property="photoName" destination="9xc-PG-tdl" id="9nI-Yr-Ga2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kdu-g5-mRY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vkf-55-R1z" firstAttribute="leading" secondItem="oxS-lX-r6O" secondAttribute="leading" id="2fO-sc-WnR"/>
+                            <constraint firstItem="Vkf-55-R1z" firstAttribute="top" secondItem="oxS-lX-r6O" secondAttribute="top" id="DnO-SI-t0l"/>
+                            <constraint firstAttribute="trailing" secondItem="Vkf-55-R1z" secondAttribute="trailing" id="F3H-dT-yvg"/>
+                            <constraint firstAttribute="bottom" secondItem="Vkf-55-R1z" secondAttribute="bottom" id="yvx-Gy-rI7"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8pk-kl-Hxd"/>
+                    <navigationItem key="navigationItem" id="Clj-mA-zh0"/>
+                    <connections>
+                        <outlet property="imageListTableView" destination="Vkf-55-R1z" id="oBe-Gi-nef"/>
+                        <segue destination="0cz-8J-e2S" kind="show" identifier="showImageFromList" id="Hsr-hG-0b1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aQ-fH-tgQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="-134"/>
+            <point key="canvasLocation" x="1757.9710144927537" y="-176.11607142857142"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fAp-1x-meu">
+        <!--Image From List View Controller-->
+        <scene sceneID="tZZ-6i-D8h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t8b-3W-qgr" sceneMemberID="viewController">
+                <viewController id="0cz-8J-e2S" customClass="ImageFromListViewController" customModule="PhotoSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tD-b9-V7F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nar-cA-CTE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cXN-c1-Mz6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nar-cA-CTE" firstAttribute="leading" secondItem="cXN-c1-Mz6" secondAttribute="leading" id="Wqp-SL-i4D"/>
+                            <constraint firstItem="nar-cA-CTE" firstAttribute="bottom" secondItem="cXN-c1-Mz6" secondAttribute="bottom" id="fTl-zo-eKS"/>
+                            <constraint firstItem="nar-cA-CTE" firstAttribute="trailing" secondItem="cXN-c1-Mz6" secondAttribute="trailing" id="fi2-Lf-yXI"/>
+                            <constraint firstItem="nar-cA-CTE" firstAttribute="top" secondItem="cXN-c1-Mz6" secondAttribute="top" id="izM-pD-ge8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wXl-RU-1HI"/>
+                    <connections>
+                        <outlet property="image" destination="nar-cA-CTE" id="pYq-G0-3u3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O29-8Q-4Xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2615.9420289855075" y="-176.11607142857142"/>
+        </scene>
+        <!--Saved Image List-->
+        <scene sceneID="Pxq-7B-xHq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bh9-8T-lFN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved Image List" image="list.dash" catalog="system" id="FaD-HQ-BAk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tKa-51-uVx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LrA-52-vwG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Jsf-tY-63A" kind="relationship" relationship="rootViewController" id="FqX-N7-kO5"/>
+                        <segue destination="Jsf-tY-63A" kind="relationship" relationship="rootViewController" id="3KP-kS-oHa"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jm8-Jz-Ljf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VB-gU-wxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="-134"/>
+            <point key="canvasLocation" x="847.82608695652175" y="-176.11607142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

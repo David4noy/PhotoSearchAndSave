@@ -116,7 +116,6 @@ extension ImageCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
         if let text = searchBar.text {
-            print(text)
             results = []
             textToSearch = text
             ds.fetchPhotos(query: text, pageNumber: pageNumber)
