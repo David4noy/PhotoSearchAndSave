@@ -17,11 +17,14 @@ struct ImageDataSource {
     
     func fetchPhotos(query: String, pageNumber: Int = 1){
         
-        let urlString = "https://api.unsplash.com/search/photos?page=\(pageNumber)&per_page=30&query=\(query)&client_id=YTz7fZ8Qxx6rPBTCKkADzJ8NcetfzYZOekS_REIbeiQ"
+        let accessKey = "YTz7fZ8Qxx6rPBTCKkADzJ8NcetfzYZOekS_REIbeiQ"
+        
+        let urlString = "https://api.unsplash.com/search/photos?page=\(pageNumber)&per_page=30&query=\(query)&client_id=\(accessKey)"
         
         guard let url = URL(string: urlString) else {
             return
         }
+        
         URLSession.shared.dataTask(with: url) {  (data, response, err) in
             
             guard let data = data, err == nil else{
