@@ -12,6 +12,7 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var imageOutlet: UIImageView!
     var urlString: String?
     var photosFolderUrl: URL?
+  //  var photosUrl: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,17 +90,31 @@ class ImageViewController: UIViewController {
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
             
+            guard let self = self else {return}
+            
             if let name = alert.textFields?.first?.text {
-                let check = name.filter { !$0.isWhitespace }
-                if name.isEmpty || check.isEmpty || check == "" {
-                    print("Empty")
+                
+                let nameCheck = self.existingNameCheck(tappedName: name)
+                
+                if  !nameCheck {
+                    
+                    let check = name.filter { !$0.isWhitespace }
+                    if name.isEmpty || check.isEmpty || check == "" {
+                        print("Empty")
+                    } else {
+                        fileName = name
+                        //  fileName = fileName.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
+                    }
                 } else {
-                    fileName = name
-                  //  fileName = fileName.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
+                    let alert = UIAlertController(title: "Name already exists", message: "Choose different name", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .cancel) { _ in
+                        return
+                    }
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
-            
-            self?.saveToDocument(fileName: fileName)
+            self.saveToDocument(fileName: fileName)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(saveAction)
@@ -127,6 +142,34 @@ class ImageViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func existingNameCheck(tappedName: String) -> Bool {
+        
+        guard let folderUrl = photosFolderUrl else {
+            return false
+        }
+        
+        do {
+            // Get the directory contents urls (including subfolders urls)
+            var photosUrls = try FileManager.default.contentsOfDirectory(at: folderUrl, includingPropertiesForKeys: nil)
+        //    print(directoryContents)
+            
+            // if you want to filter the directory contents you can do like this:
+            photosUrls = photosUrls.filter{ $0.pathExtension == "png" }
+            let nameList = photosUrls.map { $0.deletingPathExtension().lastPathComponent }
+            
+            for name in nameList {
+                if name == tappedName {
+                    return true
+                }
+            }
+        } catch {
+            print(error)
+        }
+        
+        
+        
+        return false
+    }
 
     
 }
